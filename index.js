@@ -95,3 +95,77 @@
 // Bagi(4, 5)
 // Kali(5, 6)
 // RataRata(6, 7, 8)
+
+
+//Promise 
+// function dataDatas(){
+//     return new Promise(function(resolve, reject) {
+//         if(1 < 2 ) {
+//             resolve("Janji di tepati");
+//         } else {
+//             reject("janji di ingkari");
+//         }
+//     });
+// }
+
+// const resultData = async () => {
+//     const data = await dataDatas();
+//     console.log(data);
+// };
+
+// resultData();
+// function dataDatas(){
+//     return new Promise(function(resolve, reject) {
+//         if(1 > 2 ) {
+//             resolve("Janji di tepati");
+//         } else {
+//             reject("janji di ingkari");
+//         }
+//     });
+// };
+
+// const resultData = async () => {
+//     const data = await dataDatas();
+//     console.log(data);
+// };
+
+// resultData();
+
+const getPokemon = async () => {
+    const result = await fetch(' https://pokeapi.co/api/v2/pokemon?limit=50');
+    const resultObj = await result.json()
+    console.log(resultObj)
+};
+
+getPokemon()
+const getDetail = async () => {
+    const result = await fetch(' https://pokeapi.co/api/v2/pokemon/25');
+    const resultObj = await result.json()
+    console.log(resultObj)
+};
+
+getDetail()
+
+let get = 1;
+const getData = async () => {
+    const result = await
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=5')
+    const resultObj = await result.json()
+    // console.log(resultObj.results)
+    get = resultObj.results
+}
+const getP = async() => {
+    await getData()
+    console.log(get)
+}
+getP()
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+    // const getDetail = async () => {
+    //     const result = await
+    //     fetch(`https://pokeapi.co/api/v2/pokemon/$(i)`)
+    //     const resultObj = await result.json()
+    //     console.log(resultObj)
+    // }
+    // console.log(getDetail())
+}
